@@ -1,0 +1,23 @@
+@import 'import';
+
+body {
+	margin:0;
+	padding:0;
+	background-color:#222;
+}
+* {
+	font-family:Helvetica,sans-serif;
+	color:#fff;
+	box-sizing:border-box;
+}
+
+#boxMove {
+	background-color:$blue;
+	padding:50px 40px;
+	cursor:pointer;
+	position:absolute;
+/* 	top:80px;
+	left:100px; */
+
+	@include box-shadow(0 0 10px 3px rgba(0,0,0,0.5));
+}
