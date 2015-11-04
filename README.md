@@ -9,4 +9,4 @@ A simple jQuery plugin to allow users to drag elements on the page.
 ```
 
 # Demo
-[Codepen link](http://codepen.io/phenax/pen/dYqbJJ)
+[Codepen link](http://codepen.io/phenax/full/dYqbJJ)
