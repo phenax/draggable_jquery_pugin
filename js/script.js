@@ -1,1 +1,0 @@
-$('#boxMove').draggable();
