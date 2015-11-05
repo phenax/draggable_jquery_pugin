@@ -15,14 +15,22 @@
 				'transform':'translate('+x+'px,'+y+'px)'
 			});
 		};
+		var move_func_touch = function(e) {
+			e.preventDefault();
+			var x = origX(JSON.stringify(e.originalEvent.touches[0].pageX));
+			var y = origY(JSON.stringify(e.originalEvent.touches[0].pageY));
+			$item.css({
+				'transform':'translate('+x+'px,'+y+'px)'
+			});
+		};
 
 		var move_listeners = function(move) {
 			if(move == "start") {
 				$(document).on('mousemove',move_func);
-				$(document).on('touchmove',move_func);
+				$(document).on('touchmove',move_func_touch);
 			} else if(move == "stop") {
 				$(document).off('mousemove',move_func);
-				$(document).off('touchmove',move_func);
+				$(document).off('touchmove',move_func_touch);
 			}
 		};
 
