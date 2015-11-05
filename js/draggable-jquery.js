@@ -17,8 +17,8 @@
 		};
 		var move_func_touch = function(e) {
 			e.preventDefault();
-			var x = origX(JSON.stringify(e.originalEvent.touches[0].pageX));
-			var y = origY(JSON.stringify(e.originalEvent.touches[0].pageY));
+			var x = (JSON.stringify(e.originalEvent.touches[0].pageX));
+			var y = (JSON.stringify(e.originalEvent.touches[0].pageY));
 			$item.css({
 				'transform':'translate('+x+'px,'+y+'px)'
 			});
