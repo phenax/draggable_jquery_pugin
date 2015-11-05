@@ -8,6 +8,7 @@
 		var height = parseInt($item.width()) + 2*parseInt(padding[0]);
 		*/
 		var move_func = function(e) {
+			e.preventDefault();
 			var x = e.pageX;
 			var y = e.pageY;
 			$item.css({
@@ -18,12 +19,15 @@
 		var move_listeners = function(move) {
 			if(move == "start") {
 				$(document).on('mousemove',move_func);
+				$(document).on('touchmove',move_func);
 			} else if(move == "stop") {
 				$(document).off('mousemove',move_func);
+				$(document).off('touchmove',move_func);
 			}
 		};
 
 		var initiate = function(e) {
+			e.preventDefault();
 			/*
 			var onX = e.pageX - $item.offset().left;
 			var onY = e.pageY - $item.offset().top;
@@ -45,7 +49,9 @@
 		
 		$(document).ready(function() {
 			$item.on('mousedown',initiate);
+			$item.on('touchstart',initiate);
 			$(document).on('mouseup',endmove);
+			$(document).on('touchend',endmove);
 		});
 	};
 })(jQuery);
